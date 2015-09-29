@@ -18,14 +18,20 @@ when "list"
         else 
             puts "#{index + 1}. #{task.name} [DONE]"
         end
+        byebug 
+        p "cat"
     end
     
 when "new"
     tasks = Task.create(name: string, complete: 0)
     puts "create new task"
 when "complete"
-    
+    tasks = Task.all
+    index = string.to_i
+    tasks[index -1].complete = 1
+    tasks[index - 1].save
     puts "set task to complete"
+    
 when "delete"
     puts "delete task"
 else
