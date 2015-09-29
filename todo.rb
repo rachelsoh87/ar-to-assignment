@@ -21,8 +21,10 @@ when "list"
     end
     
 when "new"
+    tasks = Task.create(name: string, complete: 0)
     puts "create new task"
 when "complete"
+    
     puts "set task to complete"
 when "delete"
     puts "delete task"
