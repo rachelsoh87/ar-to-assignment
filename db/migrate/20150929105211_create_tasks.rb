@@ -2,11 +2,14 @@ require_relative '../../config/application'
 
 class CreateTasks < ActiveRecord::Migration
   def change
-    create_table :tasks do |s|
-      s.string :task_item
-      s.boolean :status
+    create_table :tasks do |t|
+      t.string :name
+      t.integer :complete
 
       s.timestamps null: false
     end
   end
 end
+
+#p Dir.pwd  --tells you where you are Dir (directory )
+

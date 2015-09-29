@@ -22,6 +22,6 @@ user_input = ARGV
 
     def self.delete
         puts "Your item has been deleted"
-        task.destroy# find index of item you are trying to delete and delete row, need to reupdate ids
+        tas # find index of item you are trying to delete and delete row, need to reupdate ids
     end
 end
