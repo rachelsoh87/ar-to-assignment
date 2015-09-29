@@ -18,8 +18,7 @@ when "list"
         else 
             puts "#{index + 1}. #{task.name} [DONE]"
         end
-        byebug 
-        p "cat"
+
     end
     
 when "new"
@@ -28,11 +27,15 @@ when "new"
 when "complete"
     tasks = Task.all
     index = string.to_i
-    tasks[index -1].complete = 1
+    tasks[index - 1].complete = 1
     tasks[index - 1].save
     puts "set task to complete"
     
 when "delete"
+    tasks = Task.all
+    index = string.to_i
+    tasks[index - 1].destroy
+    tasks[index - 1].save
     puts "delete task"
 else
     puts "Invalid Command."
